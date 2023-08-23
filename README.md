@@ -1,5 +1,5 @@
 # Freeway Atari 
-  Jogo baseado no Freeway, lançado para o Atari 2600 no ano de 1981.<br>
+   Jogo baseado no Freeway, lançado para o Atari 2600 no ano de 1981.<br>
    O jogador controlava uma galinha que deveria atravessar uma rodovia cheia de automóveis e de caminhões, com mais de seis pistas.
   
   # Tecnologias utilizadas:
@@ -12,7 +12,7 @@
   ## [Jogar Freeway Game]()
 
   
-  ![Freeway Game]()
+  ![Freeway Game](/images/freeway.gif)
 
   # Curso / Instrutor:
   Jogos clássicos parte 2: laços e listas com Javascript (Alura) / Guilherme Lima
