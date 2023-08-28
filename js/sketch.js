@@ -1,20 +1,16 @@
 function setup() {
-  somDaTrilha.loop(0, 1, 0.2);
-  createCanvas(500, 400);
-}
+  somTrilha.loop();
+  createCanvas(700, 550);
+
+
+}   
 
 function draw() {
-  background(imagemDaEstrada);
-  mostraAtor();
-  mostraCarro();
-  movimentaCarro();
-  movimentaAtor();
-  voltaPosicaoInicialDoCarro();
-  verificaColisao();
-  incluiPontos();
-  marcaPonto();
+  background(imgEstrada);
+  ator();
+  automoveis();
+  colisao();
+
 }
-
-
 
 

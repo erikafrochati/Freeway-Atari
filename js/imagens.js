@@ -1,24 +1,36 @@
-// Carrega as imagens e sons do jogo:
-let imagemDaEstrada;
-let imagemDoAtor;
-let imagemCarro1;
-let imagemCarro2;
-let imagemCarro3;
+//--------------------------------------------Imagens e Sons-------------------------------------------
+let ponto;
+let somColidiu;
+let somTrilha;
+let imgEstrada;
+let imgAtor;
+//Carros
+let imgCarro1;
+let imgCarro2;
+let imgCarro3;
+let imgCarro4;
+let imgCarro1V;
+let imgCarro2V;
+let imgCarro3V;
+let imgCarro4V;
 
-let somDaTrilha;
-let somDaColisao;
-let somDoPonto;
-
-function preload() {
-  imagemDaEstrada = loadImage('/images/estrada.png');
-  imagemDoAtor = loadImage('/images/ator-2.png');
-  imagemCarro1 = loadImage('/images/carro-1.png');
-  imagemCarro2 = loadImage('/images/carro-2.png');
-  imagemCarro3 = loadImage('/images/carro-3.png');
-  imagemCarros = [imagemCarro1, imagemCarro2, imagemCarro3, imagemCarro1, imagemCarro2, imagemCarro3]
-
-  somDaTrilha = loadSound('/sons/trilha.mp3');
-  somDaColisao = loadSound('/sons/colidiu.mp3');
-  somDoPonto = loadSound('/sons/pontos.wav');
+function preload(){
+    ponto = loadSound("sons/ponto.wav");
+    somTrilha = loadSound("sons/trilha.mp3");
+    somColidiu = loadSound("sons/colidiu.mp3");
+    //Imagem:
+    imgEstrada = loadImage("imagens/estrada.png");
+    imgAtor = loadImage("imagens/ator.png");
+    //Ida
+    imgCarro1 = loadImage("imagens/carro2.png");
+    imgCarro2 = loadImage("imagens/caminhao.png");
+    imgCarro3 = loadImage("imagens/carro1.png");
+    imgCarro4 = loadImage("imagens/carro2V.png");
+    //Volta
+    imgCarro1V = loadImage("imagens/carro1V.png");
+    imgCarro2V = loadImage("imagens/carro2V.png");
+    imgCarro3V = loadImage("imagens/caminhaoV.png");
+    imgCarro4V = loadImage("imagens/carro1.png");
+    //Lista
+    veiculos = [imgCarro1, imgCarro2, imgCarro3, imgCarro4V, imgCarro1V, imgCarro2V, imgCarro3V, imgCarro4];
 }
-

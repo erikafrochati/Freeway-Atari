@@ -1,63 +1,41 @@
-//Ator:
-let xAtor = 85;
-let yAtor = 370;
-let colisao = false;
-let meusPontos = 0;
-
-function mostraAtor() {
-  image(imagemDoAtor, xAtor, yAtor, 25, 25);
-}
-
-function movimentaAtor() {
-  if(keyIsDown(UP_ARROW)) {
-    yAtor -= 3;
-  
-  }
-  if(keyIsDown(DOWN_ARROW)) {
-    if(podeSeMover()) {
-      yAtor += 3;
+//Variaveis do Ator:
+let varAtor = [110, 500, 60, 5]; //varAtor = [x, y, tamanho, velocidade]
+let raio = 35;
+let p = 0;
+function ator(){
+    //Mostra ator no sketch:
+    image(imgAtor, varAtor[0], varAtor[1], varAtor[2], varAtor[2]);
+    //Função de movimentação da personagem pelas teclas:
+    movimentacao();
+    function movimentacao(){
+        if(keyIsDown(UP_ARROW)){
+            varAtor[1] -= varAtor[3];
+        }
+        if(keyIsDown(DOWN_ARROW)){
+            varAtor[1] += varAtor[3];
+            if(varAtor[1] > 550){
+                return voltaPinicial();
+            }
+        }
+        if(keyIsDown(LEFT_ARROW)){
+            varAtor[0] -= varAtor[3];
+            if(varAtor[0] < 0){
+                return voltaPinicial();
+            }
+        }
+        if(keyIsDown(RIGHT_ARROW)){
+            varAtor[0] += varAtor[3];
+            if(varAtor[0] > 700){
+                return voltaPinicial();
+            }
+        }
     }
-  }
-}
 
-function verificaColisao() {
-  for(let i = 0; i < imagemCarros.length; i++) {
-    colisao = collideRectCircle(xCarros[i], yCarros[i], comprimentoCarro, alturaCarro, xAtor, yAtor, 15);
-
-    if(colisao) {
-      voltaParaPosicaoInicial();
-      somDaColisao.play(0, 1, 0.2);
-
-      if(pontosMaiorQueZero()){
-        meusPontos -= 1;
-      }
+    resetPosicao();
+    function resetPosicao(){
+        if(keyIsDown(82)){
+            varAtor[0] = 110;
+            varAtor[1] = 485;
+        }
     }
-  }
-}
-
-function voltaParaPosicaoInicial() {
-  yAtor = 370;
-}
-
-function incluiPontos() {
-  textAlign(CENTER);
-  textSize(25);
-  fill(255, 240, 60);
-  text(meusPontos, width / 5, 27);
-}
-
-function marcaPonto() {
-  if(yAtor < 15) {
-    meusPontos += 1;
-    somDoPonto.play(0, 1, 0.2);
-    voltaParaPosicaoInicial();
-  }
-}
-
-function pontosMaiorQueZero() {
-  return meusPontos > 0;
-}
-
-function podeSeMover() {
-  return yAtor < 370;
 }
