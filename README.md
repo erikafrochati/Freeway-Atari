@@ -4,9 +4,6 @@
 
   # Preview:
   ## [Jogar Freeway Game]()
-
-  
-  ![Freeway Game](/images/freeway.gif)
 ***  
 ## 🚀 Comandos:
 
